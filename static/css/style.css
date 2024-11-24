@@ -1,64 +1,203 @@
+/* Resetting basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    animation: bodyBackground 4s ease-in-out infinite alternate;
 }
 
+/* Animation for body background color */
+@keyframes bodyBackground {
+    0% {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+    }
+    100% {
+        background: linear-gradient(45deg, #2575fc, #6a11cb);
+    }
+}
+
+/* Centered container */
 .container {
-    height: 50vh;
-    width: 25vw;
     display: flex;
-    padding-block: 2rem;
-    justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #47616c;
-    border-radius: 12px;
+    justify-content: center;
+    padding: 3rem;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    width: 30vw;
+    max-width: 700px;
+    min-width: 250px;
+    animation: fadeIn 1.5s ease-out;
 }
 
+/* Fade in animation for container */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header section */
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: slideIn 1.5s ease-out;
 }
 
+/* Header text style */
+.header h4 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #fffbfb;
+}
+
+/* Animation for header text */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Image box styling */
 .img-box {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
+    border: 3px solid #fff;
+    margin-bottom: 1rem;
+    margin-left: 130px;
+    position: relative;
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    animation: bounceIn 1s ease-out;
 }
 
 .img {
-    width: 100%;
+    width: 100%; /* Ensure the image fills the box */
+    height: 100%; /* Ensure the image fills the box */
+    object-fit: cover; /* Maintain aspect ratio and cover the box without distortion */
 }
 
+/* Bounce-in animation for the image */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Google button styling */
 .google-btn {
     display: flex;
     align-items: center;
-    background-color: #47616c;
+    background-color: #e25a29;
     color: white;
-    width: 200px;
-    height: 50px;
+    width: 300px;  /* Increase width to make the button larger */
+    height: 60px;  /* Increase height to make the button taller */
     border-radius: 5px;
-    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 3px 10px -2px rgba(244, 242, 241, 0.014);
     overflow: hidden;
-    padding-inline: 8px;
+    padding-inline: 15px;  /* Add padding on the left and right of the button */
     text-decoration: none;
+    justify-content: center; /* Ensure text and icon are centered horizontally */
+    animation: zoomIn 1.5s ease-out;
 }
 
+/* Zoom-in animation for the Google button */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Google icon styling */
 .google-icon {
-    background: url("https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg") transparent 5px 50% no-repeat;
-    display: inline-block;
-    vertical-align: middle;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg") transparent no-repeat;
     width: 35px;
-    height: 50px;
+    height: 35px;
+    background-size: contain;
+    margin-right: 10px;
 }
 
+/* Text styling for the button */
 .btn-text {
-    margin-left: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-right: 45px;
+}
+
+/* Hover effect for buttons */
+.google-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Active effect for buttons */
+.google-btn:active {
+    transform: translateY(1px);
+}
+
+/* Welcome page styles */
+.welcome-message {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fffbfb;
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Animations for the header */
+.header h4 {
+    animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

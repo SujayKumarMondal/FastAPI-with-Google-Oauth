@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Home Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}" />
   </head>
   <body>
     <div class="container">
       <div class="header">
-        <h4>Welcome, {{user['family_name']}}</h4>
+        <h4>Welcome, {{ user['email'] }}</h4>
         <div class="img-box">
-          <img class="img" src="{{user['picture']}}" />
+          <img class="img" src="{{ user['picture'] }}" alt="User Picture" />
         </div>
       </div>
       <a href="/logout" class="google-btn">
