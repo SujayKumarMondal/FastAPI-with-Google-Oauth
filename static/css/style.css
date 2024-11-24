@@ -11,21 +11,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    background: linear-gradient(45deg, #FF9933, #FFFFFF, #138808);  /* Indian Flag Colors */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
     animation: bodyBackground 4s ease-in-out infinite alternate;
 }
 
-/* Animation for body background color */
-@keyframes bodyBackground {
-    0% {
-        background: linear-gradient(45deg, #6a11cb, #2575fc);
-    }
-    100% {
-        background: linear-gradient(45deg, #2575fc, #6a11cb);
-    }
-}
 
 /* Centered container */
 .container {
